@@ -3,8 +3,8 @@
         - web36
   gather_facts: true
   tasks: 
-        - name: iis service status.......
-          win_command: iisreset /status
+        - name: iis service restart.......
+          win_command: iisreset
           register: restart
         - name: Command Print 
           debug: var=restart.stdout_lines
