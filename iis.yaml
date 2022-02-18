@@ -1,0 +1,15 @@
+- name: "Service module"
+  hosts:
+        - web104
+  gather_facts: true
+  tasks: 
+        - name: iis service status.......
+          win_command: iisreset /status
+          register: restart
+        - name: Command Print 
+          debug: var=restart.stdout_lines
+        - name: iis service status.......
+          win_command: iisreset /status
+          register: status
+        - name: Command Print 
+          debug: var=status.stdout_lines

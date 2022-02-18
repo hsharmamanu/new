@@ -1,0 +1,17 @@
+- name: "Service module"
+  hosts: webserver1
+  gather_facts: false
+  become: true
+  become_user: root
+  tasks: 
+      - name: Msg Debug
+        debug: 
+          msg: Hello
+      - name: apache2 service restart
+        service: 
+          name: apache2
+          state: restarted
+      - name: squid service restart
+        service: 
+           name: squid
+           state: started
