@@ -1,6 +1,6 @@
 - name: "Service module"
   hosts:
-        - web104
+        - web36
   gather_facts: true
   tasks: 
         - name: iis service status.......
